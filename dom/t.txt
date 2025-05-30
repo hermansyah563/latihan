@@ -1,0 +1,26 @@
+let changeimage = 0;
+
+    tGambar.addEventListener("click", function () {
+        changeimage++;
+        if (changeimage >= lGambar.length) {
+            changeimage = 0;
+        }
+
+        gambar.setAttribute("src", lGambar[changeimage]);
+
+        gambar.classList.add("fade");
+    
+        setTimeout(function () {
+            gambar.setAttribute("src", lGambar[changeimage]);
+            gambar.classList.remove("fade");
+        }, 50);
+        
+        const lDeskripsi = [
+            "PC Gaming High-End",
+            "Monitor Full HD",
+            "Laptop ASUS ROG",
+            "Kamera DSLR Canon",
+            "iPhone 15 Pro Max"
+        ];
+
+        deskripsi.textContent = lDeskripsi[changeimage];

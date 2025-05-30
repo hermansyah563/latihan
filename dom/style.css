@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  max-width: 1400px;
+}
+
+.slider__image {
+  display: flex;
+  width: 100%; /* 3 gambar x 100% */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider__image img {
+  flex-shrink: 0;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.slide__check {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.check {
+  font-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.check.active {
+  color: white;
+}
+
