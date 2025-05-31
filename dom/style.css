@@ -52,6 +52,7 @@
   width: 90%;
   margin: auto;
   overflow: hidden;
+  max-width: 1400px;
 }
 
 .hero {
