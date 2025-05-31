@@ -114,3 +114,43 @@ checks.forEach((check, i) => {
 
 // ✅ Jalankan pertama kali untuk aktifkan icon
 updateCheckIcon();
+
+// gambar 2
+
+const gambarAuto = document.querySelector(".hero__box--image");
+let gambarGerak = document.querySelectorAll(".hero__box--image .gambar");
+
+let gerak = 1;
+let gerakSemua = gambarGerak.length;
+
+const cloneUtama = gambarGerak[0].cloneNode();
+const cloneAkhir = gambarGerak[gambarGerak.length - 1].cloneNode();
+
+gambarAuto.insertBefore(cloneAkhir, gambarGerak[0]);
+gambarAuto.appendChild(cloneUtama);
+
+gambarGerak = document.querySelectorAll(".hero__box--image .gambar");
+
+gambarAuto.style.transform = `translateX(-${gerak * 100}%)`;
+
+function gambarGanti() {
+  gerak++;
+  gambarAuto.style.transition = "transform 0.5s ease-in-out";
+  gambarAuto.style.transform = `translateX(-${gerak * 100}%)`;
+}
+
+gambarAuto.addEventListener("transitionend", () => {
+  if (gambarGerak[gerak].src === cloneUtama.src) {
+    gambarAuto.style.transition = "none";
+    gerak = 1;
+    gambarAuto.style.transform = `translateX(-${gerak * 100}%)`;
+  }
+
+  if (gambarGerak[gerak].src === cloneAkhir.src) {
+    gambarAuto.style.transition = "none";
+    gerak = gambarGerak.length - 2;
+    gambarAuto.style.transform = `translateX(-${gerak * 100}%)`;
+  }
+});
+
+let autoSlide2 = setInterval(gambarGanti, 5000); // atau 1000 ms sesuai kebutuhan

@@ -44,3 +44,28 @@
   color: white;
 }
 
+
+
+/* gambar auto 2 */
+
+.wrapper {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.hero {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.hero__box--image img {
+  width: 100%;
+  height: auto;
+}
+
+.hero__box--image {
+  display: flex;
+}
+
+
